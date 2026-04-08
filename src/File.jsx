@@ -17,7 +17,7 @@ export const File = () => {
         formData.append('file', selectedFile);
     
         try {
-            const response = await fetch('https://api.smart-order.shop/upload', {
+            const response = await fetch('https://api.smart-order.shop:8080/upload', {
                 method: 'POST',
                 body: formData,
             });
