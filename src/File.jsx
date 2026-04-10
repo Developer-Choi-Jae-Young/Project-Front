@@ -17,7 +17,9 @@ export const File = () => {
         formData.append('file', selectedFile);
     
         try {
-            const response = await fetch('https://www.smart-order.shop/api/upload', {
+            const baseUrl = import.meta.env.VITE_SERVER_URL;
+            const uploadUrl = `${baseUrl}/upload`;
+            const response = await fetch(uploadUrl, {
                 method: 'POST',
                 body: formData,
             });
